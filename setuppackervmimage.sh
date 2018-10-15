@@ -24,9 +24,9 @@ echo "vm_name=$vm_name"
 echo "pip_name=$pip_name"
 echo "nsg_name=$nsg_name"
 echo "managed_image_name=$managed_image_name"
-echo "client_id=$client_id"
-echo "client_secret=$client_secret"
-echo "Tenant_id=$Tenant_id"
+echo "client_id=00000000-0000-0000-0000-000000000000"
+echo "client_secret=10000000-0000-0000-0000-000000000000"
+echo "Tenant_id=20000000-0000-0000-0000-000000000000"
 echo "subscription_id=$subscription_id"
 read -n1 -r -p 'Press any key...' key
 
@@ -38,8 +38,6 @@ echo 'az group create --name $image_resource_group --location $location'
 read -n1 -r -p 'Press any key...' key
 
 az group create --name $image_resource_group --location $location
-
-#Create a file named ubuntu.json and paste the following content
 
 echo
 echo
