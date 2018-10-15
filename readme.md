@@ -1,4 +1,4 @@
-# Azure Virtual Machine Deployment
+# Azure Virtual Machine Deployment with Packer
 
 ## Deployment Quickstart
 
