@@ -1,6 +1,6 @@
 #!/bin/bash
 
-resource_group=vm-us-west2
+resource_group=vmp-us-east
 
 echo
 echo
