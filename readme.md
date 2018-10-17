@@ -1,8 +1,6 @@
 # Azure Virtual Machine Deployment with Packer
 
-## Deployment Quickstart
-
-git clone and update
+git commands
 
 ```bash
 git clone https://github.com/bot6/az-packer
@@ -12,7 +10,7 @@ git fetch --all
 git reset --hard origin/master
 ```
 
-Allowing the deployment scripts to execute
+Linux commands
 
 ```bash
 cd az-vm
@@ -26,17 +24,7 @@ chmod +x setuppackervm.sh
 chmod +x cleanup.sh
 ```
 
-Running the deployment
-
-```bash
-./setuppacker.sh
-
-./setuprbac.sh
-
-./setuppackervm.sh
-```
-
-Configure the Azure CLI (set output to table)
+Azure CLI commands
 
 ```bash
 az account list
@@ -48,12 +36,18 @@ az account show
 az configure
 ```
 
-Delete the Azure deployment and git repo
+Script deployment commands
+
+```bash
+./setuppackervm.sh
+
+./setuprbac.sh
+```
+
+Cleanup commands
 
 ```bash
 ./cleanup.sh
-
-cd ..
 
 rm -rf az-vm
 ```
