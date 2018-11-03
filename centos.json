@@ -1,0 +1,40 @@
+{
+  "builders": [{
+    "type": "azure-arm",
+
+    "client_id": "xxxxxxxx-fxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "client_secret": "xxxxxxxx-fxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "tenant_id": "xxxxxxxx-fxxx-xxxx-xxxx-xxxxxxxxxxx",
+    "subscription_id": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx",
+
+    "managed_image_resource_group_name": "myResourceGroup",
+    "managed_image_name": "mycentos610",
+
+    "os_type": "Linux",
+    "image_publisher": "OpenLogic",
+    "image_offer": "CentOS",
+    "image_sku": "6.10",
+    "image_version": "latest",
+    "ssh_pty": "true",
+    
+    "azure_tags": {
+        "dept": "Engineering",
+        "task": "Image deployment"
+    },
+
+    "location": "westus2",
+    "vm_size": "Standard_DS2_v2"
+  }],
+  "provisioners": [{
+    "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+    "inline": [
+      "yum update -y",
+      "yum install nginx",
+
+      "/usr/sbin/waagent -force -deprovision+user && export HISTSIZE=0 && sync"
+    ],
+    "inline_shebang": "/bin/sh -x",
+    "type": "shell",
+    "skip_clean": true
+  }]
+}
